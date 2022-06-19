@@ -11,7 +11,7 @@ public class Nothing {
 
     static {
         try {
-            BufferedInputStream stream = new BufferedInputStream(new FileInputStream(new File(Nothing.class.getClassLoader().getResource("rick").toURI())));
+            BufferedInputStream stream = new BufferedInputStream(Nothing.class.getClassLoader().getResourceAsStream("rick"));
             AudioInputStream audioIn = AudioSystem.getAudioInputStream(stream);
             Clip song = AudioSystem.getClip();
             song.open(audioIn);
